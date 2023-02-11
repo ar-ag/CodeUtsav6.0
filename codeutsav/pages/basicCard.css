@@ -65,7 +65,7 @@ padding-left: 10px;
     /* bottom: 3.91%; */
     border-radius: 12px;
     background-color: white;
-    height: 100vh;
+    height: 200vh;
     margin-top: 20px;
 }
 
@@ -144,7 +144,7 @@ padding-left: 10px;
 
 .maines{
     background-image: url('../assets/secBg.svg');
-    height: 120vh;
+    height: 240vh;
     width: 100%;
 }
 
@@ -174,4 +174,14 @@ padding-left: 8px;
 /* White */
 
 color: #FFFFFF;
+}
+
+.an{
+    margin-top: 40px;
+        margin-left: 80px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 20px;
 }

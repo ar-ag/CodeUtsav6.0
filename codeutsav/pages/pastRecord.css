@@ -33,3 +33,26 @@
     margin-bottom: 10px;
     font-size: 20px;
 }
+
+.headin{
+    width: 291px;
+        height: 21px;
+    
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 21px;
+        /* identical to box height, or 117% */
+    
+    
+        color: #212121;
+    
+        margin-left: 70px;
+        margin-top: 90px;
+        /* Inside auto layout */
+    
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+}

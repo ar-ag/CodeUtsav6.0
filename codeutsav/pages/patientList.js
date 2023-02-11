@@ -29,7 +29,10 @@ function patientList() {
             Total No. : 123
           </div>
           
-          <Link href="/basicCard" className='add' >
+        <Link href={{
+          pathname: '/basicCard',
+          query: data
+        }} className='add' >
              
               <Image src={add}/> <span> Add Patient</span> 
           </Link>
