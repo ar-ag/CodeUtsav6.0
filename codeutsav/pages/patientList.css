@@ -12,6 +12,7 @@ top: 16.11%;
 bottom: 3.91%;
 border-radius: 12px;
 background-color: white;
+height: auto;
 }
 
 .pnav{
@@ -20,3 +21,99 @@ background-color: white;
     margin-left: 25px;
 
 }
+
+.container .head{
+    width: 191px;
+height: 21px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 23px;
+line-height: 21px;
+/* identical to box height, or 117% */
+
+
+color: #212121;
+
+margin-left: 30px;
+margin-top: 30px;
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.container .subhead{
+    width: 100px;
+height: 21px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 21px;
+/* identical to box height, or 175% */
+
+
+color: #7A7A7E;
+
+margin-left: 30px;
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.container .add{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 5px 5px;
+gap: 10px;
+
+position: absolute;
+width: 120px;
+height: 40px;
+left: 85%;
+top: 30px;
+cursor: pointer;
+background: #FF9800;
+border-radius: 6px;
+border: none;
+}
+
+.container .table{
+    position: absolute;
+height: 43px;
+left: 30px;
+right: 30px;
+top: 50px;
+margin-top: 40px;
+
+/* Grey Lite */
+
+background: #FAFAFA;
+border-radius: 6px;
+display: flex;
+flex-direction: row;
+    /* justify-content: space-around; */
+    gap: 17%;
+    align-content:center;
+    line-height: 46px;
+    letter-spacing: 0.03em;
+
+color: #6D6D6D;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+}
+
+.container .table .nam{
+    margin-left: 10px;  
+}
+
+

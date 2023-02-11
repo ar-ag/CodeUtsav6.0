@@ -17,7 +17,7 @@ function home() {
 </span>
             </div >
         <div className='right' style={{ display: 'flex', flex: '0.5', justifyContent: 'center', alignItems: 'center', padding:'20px' }}>
-           <Image src={doc} style={{objectFit:'contain',height:'500px',width:'500px'}}/>
+           <Image src={doc} style={{objectFit:'contain',height:'400px',width:'400px'}}/>
             </div>
           </div>
           <Footer/>
