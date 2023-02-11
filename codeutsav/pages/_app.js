@@ -16,6 +16,7 @@ import { configureChains, createClient, WagmiConfig } from 'wagmi'
 import { arbitrum, avalanche, mainnet, polygon } from 'wagmi/chains'
 import '@/components/card/Card.css'
 import '@/components/checkoutWizard/CheckoutWizard.css'
+import '@/pages/basicCard.css'
 
 // const client=createClient({
 //   provider,webSocketProvider,autoConnect:true,
