@@ -24,7 +24,7 @@ function patientList() {
           </div>
           <button className='add'>
              
-             <span> <Image src={add}/> Add Patient</span> 
+              <Image src={add}/> <span> Add Patient</span> 
           </button>
       <div className='table'>
         <div className='nam'>Name</div>

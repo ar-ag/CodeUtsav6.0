@@ -70,9 +70,9 @@ flex-grow: 0;
 
 .container .add{
     display: flex;
-flex-direction: column;
+flex-direction: row;
 align-items: flex-start;
-padding: 5px 5px;
+padding: 5px 2px;
 gap: 10px;
 
 position: absolute;

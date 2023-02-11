@@ -43,10 +43,7 @@ const Data=()=>{
            Connect Wallet
          </button> */}
          <Web3Button icon="show" label="Connect Wallet" balance="show" onClick={Data}/>
-         <div className='line'></div>
-         <div className='settings'>
-           <Image src={setting} />
-         </div>
+        
        </div>
      </div>
   </>
