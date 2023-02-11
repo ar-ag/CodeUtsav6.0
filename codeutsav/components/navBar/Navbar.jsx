@@ -14,17 +14,15 @@ const NavBar = () => {
   async function getWallet(){
     const response=await axios.get('/api/hello');
   }
-  let router = useRouter()
+  let router = useRouter();
 const Data=()=>{
-  if(!isConnected){
+  if(isConnected===false){
     setLogged(true);
-    if(logged===true){
       router.push('/patientList')
-    }
     console.log(address);
   }
 
-  if(!isConnected){
+  if(isConnected===true){
     router.push('/')
   }
 }
