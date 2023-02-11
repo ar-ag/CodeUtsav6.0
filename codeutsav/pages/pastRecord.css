@@ -1,0 +1,35 @@
+.mainese{
+    background-image: url('../assets/secBg.svg');
+    height: 100vh;
+    width: 100%;
+}
+
+.containerss{
+    position: absolute;
+    left: 4.86%;
+    right: 4.86%;
+    top: 16.11%;
+    /* bottom: 3.91%; */
+    border-radius: 12px;
+    background-color: white;
+    height: 80vh;
+    margin-top: 20px;
+}
+
+.boximm{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 414px;
+    height: 41.02px;
+ 
+    margin-top: 30px;
+    margin-left: -230px;
+    padding-left: 10px;
+    /* Grey */
+    
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}

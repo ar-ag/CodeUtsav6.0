@@ -1,0 +1,91 @@
+
+.curved-gradient{
+ position: absolute;
+width: 99%;
+top:0px;
+
+}
+.curved-gradient img{
+ height: 95vh;
+  width: 100%;
+}
+
+.navBar{
+    display:flex;
+    height: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    align-items: center;
+    padding: 5px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    position: relative;
+   }
+   .navBar .leftnav{
+    display:flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+   }
+   
+ .name{
+height: 44px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 36px;
+line-height: 44px;
+color: #302F2F;
+ }
+  
+   .navBar .rightnav{
+    display: flex;
+    flex-direction: row;
+    gap:15px;
+    margin-top: 40px;
+   }
+   .navBar .rightnav button{
+    display: flex;
+    flex:3;
+    gap:15px;
+    justify-content: center;
+    align-items: center;
+  width: 120px;
+height: 45px;
+left: 12px;
+top: 53px;
+border:0px;
+cursor: pointer;
+background:#FF9800;
+border-radius: 9px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 15px;
+line-height: 22px;
+display: flex;
+align-items: center;
+  -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+color: #FFFFFF;
+   }
+
+  .navBar .rightnav button:hover{
+    background: #cc7000;
+  }
+   .navBar .rightnav .line{
+left: 88.12%;
+right: 11.81%;
+top: 4.27%;
+bottom: 90.54%;
+
+border: 1px solid #979797;
+transform: matrix(-1, 0, 0, 1, 0, 0);
+   }
+
+   .navBar .rightnav .setting{
+    width: 36px;
+height: 38.47px;
+left: 1301px;
+top: 61px;
+   }
