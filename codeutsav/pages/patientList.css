@@ -71,12 +71,12 @@ flex-grow: 0;
 .container .add{
     display: flex;
 flex-direction: row;
-align-items: flex-start;
-padding: 5px 2px;
+align-items: center;
+padding: 5px 6px;
 gap: 10px;
 
 position: absolute;
-width: 120px;
+width: 140px;
 height: 40px;
 left: 85%;
 top: 30px;

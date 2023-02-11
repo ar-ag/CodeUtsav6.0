@@ -4,6 +4,8 @@ import logo from 'assets/logo.svg'
 import add from 'assets/add.svg'
 import Card from '@/components/card/Card'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
+import basicCard from './basicCard'
 function patientList() {
   const router = useRouter();
   const data = router.query;
@@ -26,10 +28,12 @@ function patientList() {
           <div className='subhead'>
             Total No. : 123
           </div>
-          <button className='add'>
+          
+          <Link href="/basicCard" className='add' >
              
               <Image src={add}/> <span> Add Patient</span> 
-          </button>
+          </Link>
+          
       <div className='table'>
         <div className='nam'>Name</div>
         <div className='emailid'>Email-Id</div>
