@@ -1,12 +1,14 @@
 import logo from '../../assets/logo.svg'
 import Image from 'next/image'
 import setting from '../../assets/setting.svg'
+import landing from '../../assets/landing.png'
 
 const NavBar = () => {
 
  return (
   <>
      <div className='curved-gradient'>
+      <Image src={landing} />
       </div>
      <div className='navBar'>
        <div className='leftnav' >

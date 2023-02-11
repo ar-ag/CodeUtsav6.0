@@ -1,17 +1,13 @@
 
 .curved-gradient{
  position: absolute;
- width: 100%;
- display: flex;
- left: 0px;
-  height: 80vh;
-  top: 0px;
-    background: linear-gradient(161.09deg, rgba(255, 236, 179, 0.995138) 1.77%, #E1BEE7 77.76%);
-     mix-blend-mode: normal;
-     opacity: 0.25;
-     display: flex;
-     border-bottom-left-radius: 560px;
-     border-bottom-right-radius: 990px;
+width: 99%;
+top:0px;
+
+}
+.curved-gradient img{
+ height: 90vh;
+  width: 100%;
 }
 
 .navBar{
