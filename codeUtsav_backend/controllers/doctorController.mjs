@@ -143,7 +143,8 @@ const getAllPatients = asyncHandler(async(req,res) => {
         for(var j =0;j<data.length;j++) {
             console.log(JSON.parse(data[j]))
             const userDataObj = JSON.parse(data[j])
-            userData.push(userDataObj.name)
+            const obj ={"name":userDataObj.name, "email":userDataObj.email, "phone":userDataObj.phone}
+            userData.push(obj)
         }
         
         res.status(200).json(
