@@ -1,7 +1,7 @@
 import express from 'express';
 import asyncHandler from 'express-async-handler';
 const router = express.Router();
-import {addPatient, getPatient} from '../controllers/doctorController.mjs'
+import {addPatient,  getSpecificPatient, getAllPatients} from '../controllers/doctorController.mjs'
 import doctorModel from '../models/doctorModel.mjs';
 
 
@@ -20,7 +20,9 @@ router.route('/').post(addPatient);
 //         router.route('/').post(addPatient)
 //     }
 // })
-router.route('/:walletAddress').get(getPatient);
+router.route('/:walletAddress/:id').get(getSpecificPatient);
+
+router.route('/:walletAddress').get(getAllPatients);
 
 // routeFunction();
 
