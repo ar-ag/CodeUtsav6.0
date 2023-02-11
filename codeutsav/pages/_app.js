@@ -7,13 +7,9 @@ import doc from '../assets/doc.svg'
 export default function App({ Component, pageProps }) {
   return(
     <>
-      <Navbar/>
-      <div className='content'>
-        <div>
-
-        </div>
-        <doc/>
-      </div>
+    
+      <Component {...pageProps} />
+      
       <Footer />
     </>
   )
