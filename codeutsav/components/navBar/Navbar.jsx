@@ -5,30 +5,25 @@ import setting from '../../assets/setting.svg'
 const NavBar = () => {
 
  return (
-  <div className='navBar'>
-   <div className='leftnav' >
-   
-   <Image src={logo} />
-   <div  className='name'>EHR</div>
-    
-   </div>
-   
-   
-  
-   
-   
-   <div className='rightnav' style={{ textDecoration: "none" }}>
-
-  
-    <div className='user'>
-       Connect Wallet
-    </div>
-    <div className='line'></div>
-    <div className='settings'>
-      <Image src={setting} />
-    </div>
-   </div>
-  </div>
+  <>
+     <div className='curved-gradient'>
+      </div>
+     <div className='navBar'>
+       <div className='leftnav' >
+         <Image src={logo} />
+         <div className='name'>EHR</div>
+       </div>
+       <div className='rightnav' style={{ textDecoration: "none" }}>
+         <div className='user'>
+           Connect Wallet
+         </div>
+         <div className='line'></div>
+         <div className='settings'>
+           <Image src={setting} />
+         </div>
+       </div>
+     </div>
+  </>
  )
 }
 
