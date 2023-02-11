@@ -3,7 +3,11 @@ import Image from 'next/image'
 import logo from 'assets/logo.svg'
 import add from 'assets/add.svg'
 import Card from '@/components/card/Card'
+import { useRouter } from 'next/router'
 function patientList() {
+  const router = useRouter();
+  const data = router.query;
+  console.log(data);
   return (
     <div className='maine'>
        <div className='navBar'>
