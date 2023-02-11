@@ -14,6 +14,7 @@ import { AppProps } from 'next/app'
 import { useEffect, useState } from 'react'
 import { configureChains, createClient, WagmiConfig } from 'wagmi'
 import { arbitrum, avalanche, mainnet, polygon } from 'wagmi/chains'
+import '@/components/card/Card.css'
 
 // const client=createClient({
 //   provider,webSocketProvider,autoConnect:true,

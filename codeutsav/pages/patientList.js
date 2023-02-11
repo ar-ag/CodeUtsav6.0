@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import logo from 'assets/logo.svg'
 import add from 'assets/add.svg'
+import Card from '@/components/card/Card'
 function patientList() {
   return (
     <div className='maine'>
@@ -31,7 +32,17 @@ function patientList() {
         <div className='phone'>Phone Number</div>
         <div className='date'>Date added</div>
       </div>
+      <div className='card'><Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      </div>
+      
        </div>
+       
     </div>
   )
 }
