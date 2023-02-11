@@ -1,9 +1,35 @@
-import React from 'react'
+import logo from '../../assets/logo.svg'
+import Image from 'next/image'
+import setting from '../../assets/setting.svg'
 
-function Navbar() {
-  return (
-    <div>Navbar</div>
-  )
+const NavBar = () => {
+
+ return (
+  <div className='navBar'>
+   <div className='leftnav' >
+   
+   <Image src={logo} />
+   <div  className='name'>EHR</div>
+    
+   </div>
+   
+   
+  
+   
+   
+   <div className='rightnav' style={{ textDecoration: "none" }}>
+
+  
+    <div className='user'>
+       Connect Wallet
+    </div>
+    <div className='line'></div>
+    <div className='settings'>
+      <Image src={setting} />
+    </div>
+   </div>
+  </div>
+ )
 }
 
-export default Navbar
+export default NavBar

@@ -1,0 +1,87 @@
+
+.navBar{
+    display:flex;
+    height: 50px;
+    margin: 1px;
+    align-items: center;
+    padding: 5px 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+    top: 0;
+   }
+   .navBar .leftnav{
+    display:flex;
+    align-items: center;
+    gap: 30px;
+    margin-left: 3%;
+   }
+   
+ .name{
+    
+height: 44px;
+
+
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 36px;
+line-height: 44px;
+/* identical to box height */
+
+
+color: #302F2F;
+ }
+   
+  
+   .navBar .rightnav{
+    display: flex;
+    flex-direction: row;
+    margin-right: 12%;
+   }
+   
+   .navBar .rightnav .user{
+    display: flex;
+    flex:3;
+    gap:15px;
+    justify-content: center;
+    align-items: center;
+  width: 120px;
+height: 45px;
+left: 12px;
+top: 53px;
+
+background: #FFA000;
+border-radius: 9px;
+
+
+
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 15px;
+line-height: 22px;
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+   }
+   
+   .navBar .rightnav .line{
+    position: absolute;
+left: 88.12%;
+right: 11.81%;
+top: 4.27%;
+bottom: 90.54%;
+
+border: 1px solid #979797;
+transform: matrix(-1, 0, 0, 1, 0, 0);
+   }
+
+   .navBar .rightnav .setting{
+    width: 36px;
+height: 38.47px;
+left: 1301px;
+top: 61px;
+   }
