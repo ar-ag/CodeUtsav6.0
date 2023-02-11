@@ -166,7 +166,8 @@ font-family: 'Poppins';
 font-style: normal;
 font-weight: 600;
 font-size: 18px;
-line-height: 20px;
+line-height: 50px;
+padding-left: 8px;
 /* identical to box height */
 
 

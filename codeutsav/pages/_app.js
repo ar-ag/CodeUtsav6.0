@@ -1,6 +1,8 @@
 import '@/styles/globals.css'
 import '@/components/navBar/Navbar.css'
 import '@/pages/patientList.css'
+import '@/pages/pastRecord.css'
+import '@/pages/medication.css'
 import {SessionProvider} from 'next-auth/react'
 import { EthereumClient, modalConnectors, walletConnectProvider } from '@web3modal/ethereum'
 import { Web3Modal } from '@web3modal/react'

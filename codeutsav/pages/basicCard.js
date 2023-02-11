@@ -3,6 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import logo from 'assets/logo.svg'
 import CheckoutWizard from '@/components/checkoutWizard/CheckoutWizard'
+import Link from 'next/link'
 // import CheckoutWizard from '@/components/checkoutWizard/CheckoutWizard'
 
 function basicCard() {
@@ -42,9 +43,9 @@ function basicCard() {
  &nbsp;<input placeholder='DD-MM-YYYY' className='boxi'></input></div>
  </div>
  </div>
- <button className='ns'>
+ <Link href="/pastRecord" className='ns'>
     Next step
- </button>
+ </Link>
     </div>
     </div>   
    
