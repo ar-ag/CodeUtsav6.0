@@ -1,11 +1,23 @@
 import React from 'react'
+import Image from 'next/image'
+import logo from 'assets/logo.svg'
 
 function patientList() {
   return (
-    <div>patientList
-    <h1>haf98kJFHaiiuafhdounsdouhanasohas
-    vvouashnnadsuvaijfbaoahaosflorem4t
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat fugit soluta, provident similique illum corrupti eveniet laboriosam. Eaque rerum, possimus nisi cupiditate, aut nulla vel fugiat, quibusdam quia repellat iure?</h1></div>
+    <div className='maine'>
+       <div className='navBar'>
+       <div className='leftnav' >
+       <div className='pnav'>
+       <Image src={logo} />
+         <div className='name'>EHR</div>
+       </div>
+        
+       </div>
+       </div>
+       <div className='container'>
+
+       </div>
+    </div>
   )
 }
 
