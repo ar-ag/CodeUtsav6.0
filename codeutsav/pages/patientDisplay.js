@@ -74,7 +74,7 @@ function basicCard() {
     </div>
    </div>
    <div className='containers'>
-    <div className='headi'>
+    <div className='hedi'>
      Patient Display
     </div><br></br>
     <div className='tab'>
@@ -84,93 +84,93 @@ function basicCard() {
     <div className='form'>
      <div className='ls'>
       <div className='fn'>First Name
-       <input placeholder='First Name' name="fName"
+       <input placeholder='Manjeet' name="fName" id='op'
         autoComplete="off"
         onChange={(event) => setfName(event.target.value)}
         value={fName} className='box'></input></div>
       <div className='ln'>Last Name
-       <input placeholder='Last Name' name="lName"
-        autoComplete="off"
+       <input placeholder='Pathak' name="lName"
+        autoComplete="off"  id='op'
         onChange={(event) => setlName(event.target.value)}
         value={lName} className='box'></input></div>
       <div className='ed'>Email-id
-       <input placeholder='Email=id' name="email"
-        autoComplete="off"
+       <input placeholder='manjeet@gmail.com' name="email"
+        autoComplete="off"  id='op'
         onChange={(event) => setEmail(event.target.value)}
         value={email} className='box'></input></div>
       <div className='headin'>
        Past Records
       </div>
       <div className='an'>Allergies
-       <input placeholder='Allergies' name="allergies"
+       <input placeholder='NA' name="allergies"
         autoComplete="off"
         onChange={(event) => { setAllergies(event.target.value), { activeStep: 1 } }}
-        value={allergies} className='box' onClick={handleClicke} ></input></div>
+        value={allergies} className='box' onClick={handleClicke}  id='op' ></input></div>
       <div className='ln'>Records of hospitalization
-       <input placeholder='Records of hospitalization' name="hospitalization"
+       <input placeholder='NA' name="hospitalization"
         autoComplete="off"
         onChange={(event) => setHospitalization(event.target.value)}
-        value={hospitalization} className='box'></input></div>
+        value={hospitalization} className='box'  id='op'></input></div>
       <div className='headin'>
        Problem & Diagnose
       </div>
       <div className='an'>Conditions or Diseases
-       <input placeholder='Conditions or Diseases' name="diseases"
+       <input placeholder='Malaria' name="diseases"
         autoComplete="off"
         onChange={(event) => { setDiseases(event.target.value), { activeStep: 2 } }}
-        value={diseases} className='box' onClick={handlesubmit} ></input></div>
+        value={diseases} className='box' onClick={handlesubmit}  id='op'></input></div>
       <div className='ln'>Surgeries Performed
-       <input placeholder='Surgeries Performed' name="surgeries"
+       <input placeholder='0' name="surgeries"
         autoComplete="off"
         onChange={(event) => setSurgeries(event.target.value)}
-        value={surgeries} className='box'></input></div>
+        value={surgeries} className='box'  id='op'></input></div>
       <div className='ed'>List of medication
-       <input placeholder='List of medicines' name="medicines"
+       <input placeholder='NA' name="medicines"
         autoComplete="off"
         onChange={(event) => setMedication(event.target.value)}
-        value={medication} className='box'></input></div>
+        value={medication} className='box'  id='op'></input></div>
      </div>
      <div className='rs'>
       <div className='fn'>Gender
-       <input placeholder=' M for male and F for female' className='boxim' type="text"
+       <input placeholder=' M' className='boxim' type="text"
         name="gender"
         autoComplete="off"
         onChange={(event) => setGender(event.target.value)}
-        value={gender}></input></div>
+        value={gender}  id='op'></input></div>
       <div className='ln'>Phone Number
-       <input placeholder='Contact Number' name="phone"
+       <input placeholder='7007986900' name="phone"
         autoComplete="off"
         onChange={(event) => setPhone(event.target.value)}
-        value={phone} className='boxi'></input></div>
+        value={phone} className='boxi' id='op'></input></div>
       <div className='ed'>Date-of-Birth
-       &nbsp;<input placeholder='DD-MM-YYYY' name="dob"
+       &nbsp;<input placeholder='06012003' name="dob"
         autoComplete="off"
         onChange={(event) => setDob(event.target.value)}
-        value={dob} className='boxi'></input></div>
+        value={dob} className='boxi' id='op'></input></div>
       <div className='headin'></div>
       <div className='an'>Previous Visits to healthcare professionals
-       <input placeholder=' Previous Visits' name="visits"
+       <input placeholder='5' name="visits"
         autoComplete="off"
         onChange={(event) => setVisits(event.target.value)}
-        value={visits} className='boximm'></input></div>
+        value={visits} className='boximm'  id='op'></input></div>
       <div className='ln'>Family History
-       <input placeholder='Family history' name="hospitalization"
+       <input placeholder='NA' name="hospitalization"
         autoComplete="off"
         onChange={(event) => setHistory(event.target.value)}
-        value={history} className='boxi'></input></div>
+        value={history} className='boxi'  id='op'></input></div>
       <div className='headin'>
 
       </div>
       <div className='an'>Insurance
-       <input placeholder=' Insurance Information' name="insurance"
+       <input placeholder='NA' name="insurance"
         autoComplete="off"
         onChange={(event) => setInsurances(event.target.value)}
-        value={insurance} className='boxime'></input></div>
+        value={insurance} className='boxime'  id='op'></input></div>
       <div className='ln'>Immune status
-       <input placeholder='Immunisation status (out of 10)' name="visits"
+       <input placeholder='8' name="visits"
         autoComplete="off"
         onChange={(event) => setImmune(event.target.value)}
-        value={immune} className='boxi'></input></div>
+        value={immune} className='boxi'  id='op'></input></div>
      </div>
     </div>
     {/* <Link href={{

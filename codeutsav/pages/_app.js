@@ -12,6 +12,7 @@ import { arbitrum, avalanche, mainnet, polygon } from 'wagmi/chains'
 import '@/components/card/Card.css'
 import '@/components/checkoutWizard/CheckoutWizard.css'
 import '@/pages/basicCard.css'
+import '@/pages/patientDisplay.css'
 
 const projectId = 'df619298707a1ea61cc340e98d0e34dd';
 

@@ -1,6 +1,22 @@
-.maines {
+/* .maines {
  background-image: url('../assets/secBg.svg');
  height: 170vh;
  width: 100%;
+} */
+
+#op{
+    opacity: 2.5;
 }
 
+.hedi{
+    width: 309px;
+    height: 29px;
+    margin-left: 80px;
+    margin-top: 40px;
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 28px;
+}
