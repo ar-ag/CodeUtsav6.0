@@ -7,7 +7,40 @@ import buffer from 'buffer'
 // @route:          POST api/doctors
 //@access:          Public
 
-const addPatient = asyncHandler(async(req,res) => {
+// const addPatient = asyncHandler(async(req,res) => {
+//     const node = await IPFS.create();
+//     const obj = req.body.ehr;
+//     const strg = JSON.stringify(obj);
+//     console.log(strg)
+//     const fileAdded = await node.add({
+//         path: "test.txt",
+//         content: strg,
+//     })
+//     console.log(` After fileadded fn ${fileAdded.cid}`)
+//     const walletAddress = req.body.walletAddress;
+//     console.log(walletAddress);
+//     const doctorExists = await doctorModel.find({walletAddress}).exec();
+//     console.log(doctorExists);
+//     if(doctorExists.length > 0) {
+//         const updatedDoctor = await doctorModel.findOneAndUpdate({walletAddress: req.body.walletAddress}, {$push: {patients: fileAdded.cid}}, {new:true});
+//         res.status(201).json({
+//             walletAddress: updatedDoctor.walletAddress,
+//             patients: updatedDoctor.patients
+//         })
+//     } else {
+//         const doctor = await doctorModel.create({
+//             walletAddress: req.body.walletAddress,
+//             patients: fileAdded.cid
+          
+//             // {$push: {patients: fileAdded.cid}},
+//         })
+    
+//         res.status(201).json({
+//             walletAddress: doctor.walletAddress,
+//             patients: doctor.patients
+//         })
+//     }
+const addPatient = asyncHandler(async (req, res) => {
     const node = await IPFS.create();
     const obj = req.body.ehr;
     const strg = JSON.stringify(obj);
@@ -17,28 +50,31 @@ const addPatient = asyncHandler(async(req,res) => {
         content: strg,
     })
     console.log(` After fileadded fn ${fileAdded.cid}`)
+    console.log(req.body)
     const walletAddress = req.body.walletAddress;
     console.log(walletAddress);
-    const doctorExists = await doctorModel.find({walletAddress}).exec();
+    const doctorExists = await doctorModel.findOne({ walletAddress }).exec();
     console.log(doctorExists);
-    if(doctorExists.length > 0) {
-        const updatedDoctor = await doctorModel.findOneAndUpdate({walletAddress: req.body.walletAddress}, {$push: {patients: fileAdded.cid}}, {new:true});
+    if (doctorExists) {
+        const updatedDoctor = await doctorModel.findOneAndUpdate({ walletAddress: req.body.walletAddress }, { $push: { patients: fileAdded.cid } }, { new: true });
         res.status(201).json({
-            walletAddres: updatedDoctor.walletAddress,
+            walletAddress: updatedDoctor.walletAddress,
             patients: updatedDoctor.patients
         })
     } else {
         const doctor = await doctorModel.create({
-            walletAddress: walletAddress,
+            walletAddress: req.body.walletAddress,
             patients: fileAdded.cid
+
             // {$push: {patients: fileAdded.cid}},
         })
+
         res.status(201).json({
-            walletAddres: doctor.walletAddress,
+            walletAddress: doctor.walletAddress,
             patients: doctor.patients
         })
     }
-
+})
     
     // const Doctor = await doctorModel.create({
     //     wallletAddress,
@@ -56,7 +92,7 @@ const addPatient = asyncHandler(async(req,res) => {
 // console.log("Retrieved file contents:", chunks.toString());
 
     // console.log(fileAdded.cid)
-})
+
 
 // const addNewPatient = asyncHandler(async(req,res) => {
 //     const node = await IPFS.create();

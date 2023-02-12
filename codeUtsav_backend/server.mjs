@@ -7,7 +7,8 @@ import connectDb from './config/db.mjs'
 connectDb();
 
 const app = express();
-
+import cors from 'cors'
+app.use(cors());
 
 app.use(json()); 
 app.use(urlencoded({extended:false}));

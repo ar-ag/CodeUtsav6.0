@@ -28,12 +28,39 @@ function basicCard() {
   const [medication,setMedication]=useState()
   const [immune,setImmune]=useState()
   const handleClick=()=>{
-    const Object = [{"walletAddress":data}, JSON.stringify([{
+    const Object = [{"walletAddress":data}, {"ehr":JSON.stringify([{
       "name": `${fName + ' ' + lName}`, "gender": `${gender}`, "email": `${email}`, "phone": `${phone}`, "dob": `${dob}`, "allergies": `${allergies}`, "hospitalization": `${hospitalization}`, "visits": `${visits}`, "history": `${history}`, "diseases": `${diseases}`, "insurance": `${insurance}`, "surgeries": `${surgeries}`, "medication": `${medication}`, "immune": `${immune}`
-    }])]
-    console.log(Object);
+    }])}]
+    axios({
+      method: 'post',
+      url: 'http:localhost:5000/api/doctor',
+      data: {
+        Object
+      }
+    }).then((res)=>{
+      console.log(res);
+    }).catch((e)=>{
+      console.log(e)
+    });
   }
-  
+  let m;
+  const [isActive, setIsActive] = useState(false);
+  const [isOpen, setOpen] = useState(false);
+  const handleClicke = () => {
+    setIsActive(current => !current);
+  };
+  const handlesubmit = () => {
+    setOpen(current => !current);
+  }
+  if (isActive === true)
+    m = 1;
+  else
+    m = 0;
+
+  if (isOpen === true)
+    m = 2;
+  else
+    m = 1;
   return (
     <div className='maines'>
     <div className='navBar'>
@@ -49,7 +76,7 @@ function basicCard() {
         Add a new Patient
     </div><br></br>
     <div className='tab'> 
- <CheckoutWizard /></div>
+          <CheckoutWizard activeStep={m} /></div>
 
  <div className="hed">Basic Information</div>
  <div className='form'>
@@ -76,7 +103,7 @@ function basicCard() {
               <input placeholder='Allergies' name="allergies"
                 autoComplete="off"
                 onChange={(event) => { setAllergies(event.target.value), { activeStep:1 } }}
-                value={allergies} className='box' ></input></div>
+                value={allergies} className='box' onClick={handleClicke} ></input></div>
             <div className='ln'>Records of hospitalization
               <input placeholder='Records of hospitalization' name="hospitalization"
                 autoComplete="off"
@@ -89,7 +116,7 @@ function basicCard() {
               <input placeholder='Conditions or Diseases' name="diseases"
                 autoComplete="off"
                 onChange={(event) => { setDiseases(event.target.value), { activeStep: 2 } }}
-                value={diseases} className='box' ></input></div>
+                value={diseases} className='box' onClick={handlesubmit} ></input></div>
             <div className='ln'>Surgeries Performed
               <input placeholder='Surgeries Performed' name="surgeries"
                 autoComplete="off"

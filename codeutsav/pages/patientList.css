@@ -101,7 +101,7 @@ border-radius: 6px;
 display: flex;
 flex-direction: row;
     /* justify-content: space-around; */
-    gap: 17%;
+    gap: 21%;
     align-content:center;
     line-height: 46px;
     letter-spacing: 0.03em;
