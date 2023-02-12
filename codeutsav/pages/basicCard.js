@@ -92,8 +92,8 @@ function basicCard() {
                 onChange={(event) => setlName(event.target.value)}
                 value={lName} className='box'></input></div>
  <div className='ed'>Email-id
-              <input placeholder='Email=id' name="email"
-                autoComplete="off"
+              <input placeholder='Email-id' name="email"
+                autoComplete="off" type="email"
                 onChange={(event) => setEmail(event.target.value)}
                 value={email} className='box'></input></div>
             <div className='headin'>
@@ -119,7 +119,7 @@ function basicCard() {
                 value={diseases} className='box' onClick={handlesubmit} ></input></div>
             <div className='ln'>Surgeries Performed
               <input placeholder='Surgeries Performed' name="surgeries"
-                autoComplete="off"
+                autoComplete="off" type="number"
                 onChange={(event) => setSurgeries(event.target.value)}
                 value={surgeries} className='box'></input></div>
             <div className='ed'>List of medication
@@ -136,13 +136,13 @@ function basicCard() {
                 onChange={(event) => setGender(event.target.value)}
                 value={gender}></input></div>
  <div className='ln'>Phone Number
-              <input placeholder='Contact Number' name="phone"
+              <input placeholder='Contact Number' name="phone" type="number"
                 autoComplete="off"
                 onChange={(event) => setPhone(event.target.value)}
                 value={phone} className='boxi'></input></div>
  <div className='ed'>Date-of-Birth
-              &nbsp;<input placeholder='DD-MM-YYYY' name="dob"
-                autoComplete="off"
+              &nbsp;<input placeholder='DDMMYYYY' name="dob"
+                autoComplete="off" type="number"
                 onChange={(event) => setDob(event.target.value)}
                 value={dob} className='boxi'></input></div>
             <div className='headin'></div>

@@ -13,27 +13,27 @@ const NavBar = () => {
   const { isConnected, address } = useAccount()
   const [patients, setPatients] = useState('')
   const [bla, setBla] = useState(false)
-  useEffect(() =>{
-    const getData = async () => {
-      const result = await axios.get(
-        `http://localhost:5000/api/doctor/${address}`,
-      )
-      let res = JSON.parse(JSON.stringify(result))
-      const response = res.data
-      console.log(response)
-      setPatients(response[0])
-      console.log(patients, 'from Get')
-    }
-    getData()
-  }, [bla])
-  const handleClick =() => {
-    setBla(!bla)
-    // console.log(`${address}`)
-    // let result =await axios.get(`http://localhost:5000/api/doctor/${address}`).then((result)=>{
-    // }).catch((e)=>{
-    //   console.log(e)
-    // })
-  }
+  // useEffect(() =>{
+  //   const getData = async () => {
+  //     const result = await axios.get(
+  //       `http://localhost:5000/api/doctor/${address}`,
+  //     )
+  //     let res = JSON.parse(JSON.stringify(result))
+  //     const response = res.data
+  //     console.log(response)
+  //     setPatients(response[0])
+  //     console.log(patients, 'from Get')
+  //   }
+  //   getData()
+  // }, [bla])
+  // const handleClick =() => {
+  //   setBla(!bla)
+  //   // console.log(`${address}`)
+  //   // let result =await axios.get(`http://localhost:5000/api/doctor/${address}`).then((result)=>{
+  //   // }).catch((e)=>{
+  //   //   console.log(e)
+  //   // })
+  // }
   return (
     <>
       <div className="curved-gradient">
@@ -53,7 +53,7 @@ const NavBar = () => {
           <div className="settings">
             {address && (
               <Link
-                onClick={handleClick}
+                // onClick={handleClick}
                 href={{
                   pathname: '/patientList',
                   query: {

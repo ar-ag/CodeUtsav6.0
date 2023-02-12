@@ -68,14 +68,14 @@ function patientList() {
             return ( */}
               <div className="card">
                 <Card props={{name:"Manjeet",email:"manjeet@gmail.com",phone:"7007986900"}} />
-          <Card props={{ name: "Amayiya", email: "amay@gmail.com", phone: "7007986911" }} />
+          <Card props={{ name: "Amayiya", email: "amayiya@gmail.com", phone: "7007986911" }} />
           <Card props={{ name: "Surjeet", email: "surjeet@gmail.com", phone: "7007986921" }} />
-          <Card props={{ name: "Dhruvey", email: "dhruv@gmail.com", phone: "7007996900" }} />
-          <Card props={{ name: "Aryania", email: "aryan@gmail.com", phone: "9117986900" }} />
-          <Card props={{ name: "Himansh", email: "himan@gmail.com", phone: "8007986900" }} />
-          <Card props={{ name: "Pranjali", email: "Pranjal@gmail.com", phone: "7807986900" }} />
-          <Card props={{ name: "Vinayli", email: "Vinay@gmail.com", phone: "9117986900" }} />
-          <Card props={{ name: "Jiyaman", email: "jiyaRatho@gmail.com", phone: "8607986900" }} />
+          <Card props={{ name: "Dhruvey", email: "dhruvey@gmail.com", phone: "7007996900" }} />
+          <Card props={{ name: "Aryania", email: "aryania@gmail.com", phone: "9117986900" }} />
+          <Card props={{ name: "Himansh", email: "himansh@gmail.com", phone: "8007986900" }} />
+          <Card props={{ name: "Pranjali", email:"pranjali@gmail.com", phone: "97807986900" }} />
+          <Card props={{ name: "Vinayli", email: "Vinayli@gmail.com", phone: "9117986900" }} />
+          <Card props={{ name: "Jiyaman", email: "jiyaman@gmail.com", phone: "8607986900" }} />
               </div>
             {/* )
           })} */}
