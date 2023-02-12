@@ -27,22 +27,22 @@ function basicCard() {
   const [surgeries,setSurgeries]=useState()
   const [medication,setMedication]=useState()
   const [immune,setImmune]=useState()
-  const handleClick=()=>{
-    const Object = [{"walletAddress":data}, {"ehr":JSON.stringify([{
-      "name": `${fName + ' ' + lName}`, "gender": `${gender}`, "email": `${email}`, "phone": `${phone}`, "dob": `${dob}`, "allergies": `${allergies}`, "hospitalization": `${hospitalization}`, "visits": `${visits}`, "history": `${history}`, "diseases": `${diseases}`, "insurance": `${insurance}`, "surgeries": `${surgeries}`, "medication": `${medication}`, "immune": `${immune}`
-    }])}]
-    axios({
-      method: 'post',
-      url: 'http:localhost:5000/api/doctor',
-      data: {
-        Object
-      }
-    }).then((res)=>{
-      console.log(res);
-    }).catch((e)=>{
-      console.log(e)
-    });
-  }
+  // const handleClick=()=>{
+  //   const Object = [{"walletAddress":data}, {"ehr":JSON.stringify([{
+  //     "name": `${fName + ' ' + lName}`, "gender": `${gender}`, "email": `${email}`, "phone": `${phone}`, "dob": `${dob}`, "allergies": `${allergies}`, "hospitalization": `${hospitalization}`, "visits": `${visits}`, "history": `${history}`, "diseases": `${diseases}`, "insurance": `${insurance}`, "surgeries": `${surgeries}`, "medication": `${medication}`, "immune": `${immune}`
+  //   }])}]
+  //   axios({
+  //     method: 'post',
+  //     url: 'http:localhost:5000/api/doctor',
+  //     data: {
+  //       Object
+  //     }
+  //   }).then((res)=>{
+  //     console.log(res);
+  //   }).catch((e)=>{
+  //     console.log(e)
+  //   });
+  // }
   let m;
   const [isActive, setIsActive] = useState(false);
   const [isOpen, setOpen] = useState(false);
@@ -176,7 +176,7 @@ function basicCard() {
           query:[`${data}`, JSON.stringify([{
             "name": `${fName + ' ' + lName}`, "gender": `${gender}`, "email": `${email}`, "phone": `${phone}`, "dob": `${dob}`,"allergies":`${allergies}`, "hospitalization":`${hospitalization}`, "visits":`${visits}`,"history":`${history}`,"diseases":`${diseases}`,"insurance":`${insurance}`,"surgeries":`${surgeries}`,"medication":`${medication}`,"immune":`${immune}`
           }])]
-        }} className='ns' style={{display:'flex',justifyContent:'center',alignItems:'center',width:'90px',textAlign:'center'}} onClick={handleClick}>
+        }} className='ns' style={{display:'flex',justifyContent:'center',alignItems:'center',width:'90px',textAlign:'center'}} >
     Submit
 
  </Link>
