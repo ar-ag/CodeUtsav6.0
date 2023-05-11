@@ -1,4 +1,3 @@
-
 import React, { use, useEffect, useState } from 'react'
 import Image from 'next/image'
 import logo from 'assets/logo.svg'
