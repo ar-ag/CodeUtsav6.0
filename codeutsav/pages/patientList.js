@@ -8,6 +8,7 @@ import { useAccount, useDisconnect } from 'wagmi'
 import Link from 'next/link'
 import basicCard from './basicCard'
 import axios from 'axios'
+import { Loader } from '@/components/Loader'
 
 
 // export const getStaticProps=async(context)=>{
@@ -22,6 +23,8 @@ import axios from 'axios'
 //     },
 //   };
 // };
+
+let noOfPatients = 0;
 function patientList() {
   const router = useRouter()
   const DocData = router.query
@@ -50,8 +53,9 @@ function patientList() {
   //     console.log(e)
   //   })
   // }
-
-  return (
+  
+  return (<>
+    {isLoading?<Loader/>:
     <div className="maine">
       <div className="navBar">
         <div className="leftnav">
@@ -63,7 +67,7 @@ function patientList() {
       </div>
       <div className="container">
         <div className="head">List of Patients</div>
-        <div className="subhead">Total No. : 123</div>
+        <div className="subhead">{noOfPatients}</div>
 
         <Link
           href={{
@@ -79,15 +83,16 @@ function patientList() {
           <div className="nam">Name</div>
           <div className="emailid">Email-Id</div>
           <div className="phone">Phone Number</div>
-          <div className="date">Date added</div>
+          <div className="dob">DOB</div>
         </div>
         
         {dat &&
           dat.map((p) => {
             console.log(p); 
+            noOfPatients = dat.length;
             return (
               <div className="card">
-                <Card props={{name:p.name,email:p.email,phone:p.phone}} />
+                <Card props={{name:p.name, email:p.email, phone:p.phone, dob:p.dob, address: address, id: dat.indexOf(p)}} />
           {/* <Card props={{ name: "Amayiya", email: "amayiya@gmail.com", phone: "7007986911" }} />
           <Card props={{ name: "Surjeet", email: "surjeet@gmail.com", phone: "7007986921" }} />
           <Card props={{ name: "Dhruvey", email: "dhruvey@gmail.com", phone: "7007996900" }} />
@@ -98,10 +103,9 @@ function patientList() {
           <Card props={{ name: "Jiyaman", email: "jiyaman@gmail.com", phone: "8607986900" }} /> */}
               </div>
             )
-          })} 
+          })}
       </div>
-    </div>
-  )
+    </div> }</>)
 }
 
 export default patientList

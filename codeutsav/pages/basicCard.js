@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { all } from 'axios'
 import { useRouter } from 'next/router'
 import axios from 'axios'
-// import CheckoutWizard from '@/components/checkoutWizard/CheckoutWizard'
+
 
 function basicCard() {
   const router = useRouter();
@@ -194,7 +194,7 @@ function basicCard() {
             "name": `${fName + ' ' + lName}`, "gender": `${gender}`, "email": `${email}`, "phone": `${phone}`, "dob": `${dob}`,"allergies":`${allergies}`, "hospitalization":`${hospitalization}`, "visits":`${visits}`,"history":`${history}`,"diseases":`${diseases}`,"insurance":`${insurance}`,"surgeries":`${surgeries}`,"medication":`${medication}`,"immune":`${immune}`
           }])}
         }} className='ns' style={{display:'flex',justifyContent:'center',alignItems:'center',width:'90px',textAlign:'center'}} > */}
-    <button onClick={handleClick}>Submit</button>
+    <button className='ns'style={{display:'flex',justifyContent:'center',alignItems:'center',width:'90px',textAlign:'center'}} onClick={handleClick}>Submit</button>
 
  {/* </Link> */}
     </div>
