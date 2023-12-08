@@ -1,18 +1,18 @@
-import React from 'react'
+import React from "react";
 
-function patientDetail() {
+function PatientDetail() {
   return (
-    <div className=''>
-      <div className='navBar'>
-        <div className='leftnav'>
-          <div className='pnav'>
-            <Image src={logo} />
-            <div className='name'>EHR</div>
+    <div className="">
+      <div className="navBar">
+        <div className="leftnav">
+          <div className="pnav">
+            <img src={logo} />
+            <div className="name">EHR</div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default patientDetail
+export default PatientDetail;
