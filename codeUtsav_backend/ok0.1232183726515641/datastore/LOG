@@ -1,0 +1,22 @@
+2023/05/11-00:14:28.124 2ef8 Delete type=3 #1
+2023/05/11-00:20:03.522 999c Level-0 table #5: started
+2023/05/11-00:20:03.579 999c Level-0 table #5: 1039946 bytes OK
+2023/05/11-00:20:03.581 999c Delete type=0 #3
+2023/05/11-00:21:23.737 999c Level-0 table #7: started
+2023/05/11-00:21:23.803 999c Level-0 table #7: 1045746 bytes OK
+2023/05/11-00:21:23.805 999c Delete type=0 #4
+2023/05/11-00:21:28.436 999c Compacting 1@1 + 1@2 files
+2023/05/11-00:21:28.497 999c Generated table #8@1: 2093 keys, 749877 bytes
+2023/05/11-00:21:28.497 999c Compacted 1@1 + 1@2 files => 749877 bytes
+2023/05/11-00:21:28.498 999c compacted to: files[ 0 0 1 0 0 0 0 ]
+2023/05/11-00:21:28.499 999c Delete type=2 #5
+2023/05/11-00:21:28.500 999c Delete type=2 #7
+2023/05/11-00:23:20.343 999c Level-0 table #10: started
+2023/05/11-00:23:20.410 999c Level-0 table #10: 1069569 bytes OK
+2023/05/11-00:23:20.413 999c Delete type=0 #6
+2023/05/11-00:23:23.503 999c Compacting 1@1 + 1@2 files
+2023/05/11-00:23:23.574 999c Generated table #11@1: 2764 keys, 1049510 bytes
+2023/05/11-00:23:23.574 999c Compacted 1@1 + 1@2 files => 1049510 bytes
+2023/05/11-00:23:23.576 999c compacted to: files[ 0 0 1 0 0 0 0 ]
+2023/05/11-00:23:23.576 999c Delete type=2 #8
+2023/05/11-00:23:23.577 999c Delete type=2 #10

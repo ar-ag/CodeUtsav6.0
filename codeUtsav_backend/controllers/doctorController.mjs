@@ -7,41 +7,11 @@ import buffer from 'buffer'
 // @route:          POST api/doctors
 //@access:          Public
 
-// const addPatient = asyncHandler(async(req,res) => {
-//     const node = await IPFS.create();
-//     const obj = req.body.ehr;
-//     const strg = JSON.stringify(obj);
-//     console.log(strg)
-//     const fileAdded = await node.add({
-//         path: "test.txt",
-//         content: strg,
-//     })
-//     console.log(` After fileadded fn ${fileAdded.cid}`)
-//     const walletAddress = req.body.walletAddress;
-//     console.log(walletAddress);
-//     const doctorExists = await doctorModel.find({walletAddress}).exec();
-//     console.log(doctorExists);
-//     if(doctorExists.length > 0) {
-//         const updatedDoctor = await doctorModel.findOneAndUpdate({walletAddress: req.body.walletAddress}, {$push: {patients: fileAdded.cid}}, {new:true});
-//         res.status(201).json({
-//             walletAddress: updatedDoctor.walletAddress,
-//             patients: updatedDoctor.patients
-//         })
-//     } else {
-//         const doctor = await doctorModel.create({
-//             walletAddress: req.body.walletAddress,
-//             patients: fileAdded.cid
-          
-//             // {$push: {patients: fileAdded.cid}},
-//         })
-    
-//         res.status(201).json({
-//             walletAddress: doctor.walletAddress,
-//             patients: doctor.patients
-//         })
-//     }
+
 const addPatient = asyncHandler(async (req, res) => {
     const node = await IPFS.create();
+    // const node = await IPFS.create({ repo: "ok" });
+    console.log("hello from add patient");
     const obj = req.body.ehr;
     const strg = JSON.stringify(obj);
     console.log(strg)
@@ -50,7 +20,7 @@ const addPatient = asyncHandler(async (req, res) => {
         content: strg,
     })
     console.log(` After fileadded fn ${fileAdded.cid}`)
-    console.log(req.body)
+    console.log(req.body + "hello from add patient")
     const walletAddress = req.body.walletAddress;
     console.log(walletAddress);
     const doctorExists = await doctorModel.findOne({ walletAddress }).exec();
@@ -74,6 +44,8 @@ const addPatient = asyncHandler(async (req, res) => {
             patients: doctor.patients
         })
     }
+
+    await node.stop();
 })
     
     // const Doctor = await doctorModel.create({
@@ -112,6 +84,7 @@ const addPatient = asyncHandler(async (req, res) => {
 // })
 
 const getSpecificPatient = asyncHandler(async(req,res) => {
+    console.log("hello from getSpecificPateint");
     const walletAddress = req.params.walletAddress
     const index = req.params.id
     console.log(index);
@@ -124,7 +97,10 @@ const getSpecificPatient = asyncHandler(async(req,res) => {
     // console.log(doctorExists.patients);
     // console.log((doctorExists.patients).length)
     // const data = [];
+
+
     const node = await IPFS.create();
+    // const node = await IPFS.create({ repo: "ok" });
     if(doctorExists) {
         let chunk = null;
         const chunks = [];
@@ -140,6 +116,7 @@ const getSpecificPatient = asyncHandler(async(req,res) => {
               }
             
         const data = (JSON.parse(chunks));
+        console.log(data);
         res.status(200).send(data);
         
     } else {
@@ -147,10 +124,15 @@ const getSpecificPatient = asyncHandler(async(req,res) => {
             message:"doctor does not exist"
         })
     }
+
+    await node.stop();
 })
 
 const getAllPatients = asyncHandler(async(req,res) => {
+
+    console.log("hello from getAllPatients");
     const walletAddress = req.params.walletAddress;
+    console.log(walletAddress);
     const doctorExists = await doctorModel.findOne({walletAddress}).exec();
     if(!doctorExists) {
         const doctor = await doctorModel.create({
@@ -162,6 +144,7 @@ const getAllPatients = asyncHandler(async(req,res) => {
 
     } else {
         const node = await IPFS.create();
+        // const node = await IPFS.create({repo: 'ok' + Math.random()});
         var chunks = [];
         const data=[]
         for(var i = 0; i< doctorExists.patients.length; i++) {
@@ -179,14 +162,21 @@ const getAllPatients = asyncHandler(async(req,res) => {
         for(var j =0;j<data.length;j++) {
             console.log(JSON.parse(data[j]))
             const userDataObj = JSON.parse(data[j])
-            const obj ={"name":userDataObj.name, "email":userDataObj.email, "phone":userDataObj.phone}
+            console.log(`userdataObj : ${userDataObj}`)
+            const obj ={"name":userDataObj.name, "email":userDataObj.email, "phone":userDataObj.phone, "dob":userDataObj.dob}
             userData.push(obj)
         }
+
+        console.log(`sending result: ${userData}`);
         
         res.status(200).json(
             userData
         )
         
+        const stop = await node.stop();
+        console.log(stop);
+
+
 
     }
 })

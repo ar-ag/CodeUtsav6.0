@@ -6,11 +6,13 @@ import CheckoutWizard from '@/components/checkoutWizard/CheckoutWizard'
 import Link from 'next/link'
 import { all } from 'axios'
 import { useRouter } from 'next/router'
-// import CheckoutWizard from '@/components/checkoutWizard/CheckoutWizard'
+import axios from 'axios'
+
 
 function basicCard() {
   const router = useRouter();
   const data = router.query;
+  const {address} = data;
   console.log(data);
   const [fName,setfName]=useState();
   const [lName, setlName] = useState();
@@ -27,22 +29,37 @@ function basicCard() {
   const [surgeries,setSurgeries]=useState()
   const [medication,setMedication]=useState()
   const [immune,setImmune]=useState()
-  // const handleClick=()=>{
-  //   const Object = [{"walletAddress":data}, {"ehr":JSON.stringify([{
-  //     "name": `${fName + ' ' + lName}`, "gender": `${gender}`, "email": `${email}`, "phone": `${phone}`, "dob": `${dob}`, "allergies": `${allergies}`, "hospitalization": `${hospitalization}`, "visits": `${visits}`, "history": `${history}`, "diseases": `${diseases}`, "insurance": `${insurance}`, "surgeries": `${surgeries}`, "medication": `${medication}`, "immune": `${immune}`
-  //   }])}]
-  //   axios({
-  //     method: 'post',
-  //     url: 'http:localhost:5000/api/doctor',
-  //     data: {
-  //       Object
-  //     }
-  //   }).then((res)=>{
-  //     console.log(res);
-  //   }).catch((e)=>{
-  //     console.log(e)
-  //   });
-  // }
+  const handleClick=()=>{
+    console.log("hello from click submit");
+    const Object = ({
+      "name": `${fName + ' ' + lName}`, "gender": `${gender}`, "email": `${email}`, "phone": `${phone}`, "dob": `${dob}`, "allergies": `${allergies}`, "hospitalization": `${hospitalization}`, "visits": `${visits}`, "history": `${history}`, "diseases": `${diseases}`, "insurance": `${insurance}`, "surgeries": `${surgeries}`, "medication": `${medication}`, "immune": `${immune}`
+    })
+    axios({
+      method: 'post',
+      url: 'http://localhost:5000/api/doctor',
+      data: {
+        ehr: Object,
+        walletAddress: address 
+      }
+    }).then((res)=>{
+      console.log(res);
+
+    }).then(() => {
+      router.push({pathname: '/patientList', query:{address, patients : JSON.stringify([{
+        "name": `${fName + ' ' + lName}`, "gender": `${gender}`, "email": `${email}`, "phone": `${phone}`, "dob": `${dob}`,"allergies":`${allergies}`, "hospitalization":`${hospitalization}`, "visits":`${visits}`,"history":`${history}`,"diseases":`${diseases}`,"insurance":`${insurance}`,"surgeries":`${surgeries}`,"medication":`${medication}`,"immune":`${immune}`
+      }])}})
+    
+
+      
+      
+    }).catch((e)=>{
+      console.log(e)
+    });
+
+    // router.push({pathname: '/patientList', query:{address, patients : JSON.stringify([{
+    //   "name": `${fName + ' ' + lName}`, "gender": `${gender}`, "email": `${email}`, "phone": `${phone}`, "dob": `${dob}`,"allergies":`${allergies}`, "hospitalization":`${hospitalization}`, "visits":`${visits}`,"history":`${history}`,"diseases":`${diseases}`,"insurance":`${insurance}`,"surgeries":`${surgeries}`,"medication":`${medication}`,"immune":`${immune}`
+    // }])}})
+  }
   let m;
   const [isActive, setIsActive] = useState(false);
   const [isOpen, setOpen] = useState(false);
@@ -171,15 +188,15 @@ function basicCard() {
                 value={immune} className='boxi'></input></div>
           </div>
  </div>
-        <Link href={{
+        {/* <Link href={{
           pathname: '/patientList',
-          query:[`${data}`, JSON.stringify([{
+          query:{address, patients : JSON.stringify([{
             "name": `${fName + ' ' + lName}`, "gender": `${gender}`, "email": `${email}`, "phone": `${phone}`, "dob": `${dob}`,"allergies":`${allergies}`, "hospitalization":`${hospitalization}`, "visits":`${visits}`,"history":`${history}`,"diseases":`${diseases}`,"insurance":`${insurance}`,"surgeries":`${surgeries}`,"medication":`${medication}`,"immune":`${immune}`
-          }])]
-        }} className='ns' style={{display:'flex',justifyContent:'center',alignItems:'center',width:'90px',textAlign:'center'}} >
-    Submit
+          }])}
+        }} className='ns' style={{display:'flex',justifyContent:'center',alignItems:'center',width:'90px',textAlign:'center'}} > */}
+    <button className='ns'style={{display:'flex',justifyContent:'center',alignItems:'center',width:'90px',textAlign:'center'}} onClick={handleClick}>Submit</button>
 
- </Link>
+ {/* </Link> */}
     </div>
     </div>   
    
