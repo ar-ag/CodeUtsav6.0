@@ -1,7 +1,7 @@
 import logo from "../../assets/logo.svg";
 import Image from "next/image";
 import setting from "../../assets/setting.svg";
-import landing from "../../assets/landing.png";
+import landing from "../../assets/Landing.png";
 import axios from "axios";
 import { useWeb3Modal, Web3Button } from "@web3modal/react";
 import { useState, useEffect } from "react";
