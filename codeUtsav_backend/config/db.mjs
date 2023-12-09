@@ -18,5 +18,5 @@ const connectDB = async() => {
         process.exit(1);
     }
 }
-//mongodb+srv://ar_ag:aryan%400703@cluster0.pzzvyn0.mongodb.net/CodeUtsav?retryWrites=true&w=majority
+
 export default connectDB

@@ -128,7 +128,21 @@ const getSpecificPatient = asyncHandler(async(req,res) => {
     await node.stop();
 })
 
-const getAllPatients = asyncHandler(async(req,res) => {
+const getAllPatients = asyncHandler(async(req,res) => { 
+
+    const ipfsOptions = {
+        config: {
+          Addresses: {
+            API: '/ip4/0.0.0.0/tcp/5001',
+            Gateway: '/ip4/0.0.0.0/tcp/8080',
+          },
+          API: {
+            HTTPHeaders: {
+              'Access-Control-Allow-Origin': ['*'],
+            },
+          },
+        },
+      };
 
     console.log("hello from getAllPatients");
     const walletAddress = req.params.walletAddress;
@@ -143,7 +157,7 @@ const getAllPatients = asyncHandler(async(req,res) => {
         res.status(200).json(doctor.patients)
 
     } else {
-        const node = await IPFS.create();
+        const node = await IPFS.create(ipfsOptions);
         // const node = await IPFS.create({repo: 'ok' + Math.random()});
         var chunks = [];
         const data=[]
@@ -174,7 +188,12 @@ const getAllPatients = asyncHandler(async(req,res) => {
         )
         
         const stop = await node.stop();
-        console.log(stop);
+        // try {
+        //     res.status(200).json(userData);
+        //   } finally {
+        //     await node.stop();
+        //   }
+        // console.log(stop);
 
 
 
